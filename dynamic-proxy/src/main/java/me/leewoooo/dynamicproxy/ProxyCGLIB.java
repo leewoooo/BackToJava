@@ -21,6 +21,10 @@ public class ProxyCGLIB {
         };
 
         BookService bookService = (BookService) Enhancer.create(BookService.class, handler);
+
+        // bookService.getClass() = class me.leewoooo.dynamicproxy.BookService$$EnhancerByCGLIB$$23e002dc
+        System.out.println("bookService.getClass() = " + bookService.getClass());
+        
         bookService.printTitle(new Book("leewoooo"));
     }
 }

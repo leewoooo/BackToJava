@@ -11,6 +11,12 @@ public class DynamicProxyExample {
         // Exception in thread "main" java.lang.IllegalArgumentException: me.leewoooo.dynamicproxy.BookServiceImpl is not an interface
         // BookServiceImpl bookService = (BookServiceImpl) Proxy.newProxyInstance(BookService.class.getClassLoader(), new Class[]{BookServiceImpl.class}, (proxy, method, arguments) -> {
 
+        // public static Object newProxyInstance(
+        //      ClassLoader loader,
+        //      @NotNull Class<?>[] interfaces, // 이와 같이 파라미터 명도 interfaces라고 명시 되어 있음.
+        //      @NotNull reflect.InvocationHandler h
+        //    )
+
         BookService bookService = (BookService) Proxy.newProxyInstance(BookService.class.getClassLoader(), new Class[]{BookService.class}, (proxy, method, arguments) -> {
             BookService realSubject = new BookServiceImpl();
             System.out.println("prev method invoke");

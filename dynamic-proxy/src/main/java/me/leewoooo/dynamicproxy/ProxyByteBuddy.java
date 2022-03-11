@@ -30,6 +30,10 @@ public class ProxyByteBuddy {
 
         // make instace
         BookService bookService = bookServiceImplClass.getConstructor().newInstance();
+
+        // bookService.getClass() = class me.leewoooo.dynamicproxy.BookServiceImpl$ByteBuddy$HF4myKM3
+        System.out.println("bookService.getClass() = " + bookService.getClass());
+        
         bookService.printTitle(new Book("leewoooo"));
     }
 }
