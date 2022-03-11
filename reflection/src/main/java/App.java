@@ -97,5 +97,9 @@ public class App {
         // 실행하기 (실행할 때 static method가 아닌 이상 인스턴스를 지정해야 한다.)
         int result = (int) sum.invoke(memberWithAge, 1, 2);
         System.out.println("result = " + result);
+
+        Method staticSum = memberClass.getMethod("staticSum", int.class, int.class);
+        int staticResult = (int) staticSum.invoke(null, 1, 2);
+        System.out.println("staticResult = " + staticResult);
     }
 }

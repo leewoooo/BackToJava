@@ -18,4 +18,8 @@ public class Member {
     public int sum(int left, int right){
         return left + right;
     }
+
+    public static int staticSum(int left, int right){
+        return left + right;
+    }
 }
